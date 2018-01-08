@@ -1,7 +1,7 @@
 <?php
 namespace app\index\model;
 use think\Model;
-class Teacher extends Model
+class Users extends Model
 {
 	//自定义初始化
 	protected function initialize()

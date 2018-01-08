@@ -1,7 +1,7 @@
 <?php
-namespace app\model;
+namespace app\index\model;
 use think\Model;
-class Student extends Model
+class Eq_type extends Model
 {
 	//自定义初始化
 	protected function initialize()
@@ -9,10 +9,6 @@ class Student extends Model
 		//需要调用`Model`的`initialize`方法
 		parent::initialize();
 		//TODO:自定义的初始化
-	}
-	public function clas()
-	{
-		return $this->belongsTo('clas');
 	}
 	
 }

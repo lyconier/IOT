@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'           => 'mysql',
     // 服务器地址
-    'hostname'       => '127.0.0.1',
+    'hostname'       => '115.159.40.208',
     // 数据库名
     'database'       => 'dc',
     // 用户名
     'username'       => 'root',
     // 密码
-    'password'       => 'lyc150523',
+    'password'       => 'HIQ2rs2ViXGIk5mIMdp9M',
     // 端口
     'hostport'       => '',
     // 连接dsn
@@ -29,7 +29,7 @@ return [
     // 数据库编码默认采用utf8
     'charset'        => 'utf8',
     // 数据库表前缀
-    'prefix'         => 'tb_',
+    'prefix'         => '',
     // 数据库调试模式
     'debug'          => true,
     // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
