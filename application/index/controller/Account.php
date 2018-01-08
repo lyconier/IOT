@@ -31,12 +31,12 @@ class Account extends Controller
 			
 		}else 
 		{
-			$stulogic=\think\Loader::model('Student','logic');
-			$stu=$stulogic->checkuser($_POST['username'],$_POST['pwd']);
+			$userlogic=\think\Loader::model('Users','logic');
+			$user=$userlogic->checkuser($_POST['username'],$_POST['pwd']);
 			if($stu)
 			{
-				Session::set('stuno',$stu->stu_no);
-				$this->success('登陆成功','Student/index');
+				Session::set('username',$user->username);
+				$this->success('登陆成功','Users/index');
 			}
 			else 
 			{
