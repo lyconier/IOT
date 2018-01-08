@@ -1,0 +1,71 @@
+
+<div class="row">
+					
+					<div class="span9">
+				
+						<div class="widget">
+									
+							<div class="widget-content">
+								
+								<h3>{$task.task_title}</h3>
+								
+								<p>{$task.task_content}</p>
+							 <form id="submit-form" name="submit-form" action="{:url('index/student/dosubmittask')}" method="post"/>
+									<fieldset>
+										<div class="control-group">											
+											<label class="control-label" for="submit-content">答题区</label>
+											<div class="controls">
+												<textarea  class="input-medium" id="submit_content" name="submit_content" style="width:700px;height:300px;"></textarea>
+												{:token()}
+												<input type="hidden" name="task_id" value={$task.task_id}/>
+												<input type="hidden" name="stu_id" value={$stuid}/>
+												<p class="help-block">
+													<ul>
+														<li>附件请压缩成rar格式或zip格式后上传</li> 
+														<li>ctrl+enter快速提交</li>
+													</ul>
+												</p>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										<br />
+										<div class="form-actions">
+											<button type="submit" class="btn btn-primary">提 交</button> 
+											<button class="btn">取 消</button>
+										</div> <!-- /form-actions -->
+									</fieldset>
+							</form>	
+							</div> <!-- /widget-content -->
+							
+							
+						</div> <!-- /widget -->
+						
+					</div> <!-- /span9 -->
+					
+</div> <!-- /row -->
+<link rel="stylesheet" href="__PUBLIC__/static/vendor/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/static/vendor/kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/static/vendor/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/static/vendor/kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/static/vendor/kindeditor/plugins/code/prettify.js"></script>
+	<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="submit_content"]', {
+				cssPath : '__PUBLIC__/static/vendor/kindeditor/plugins/code/prettify.css',
+				uploadJson : '__PUBLIC__/static/vendor/kindeditor/php/upload_json.php',
+				fileManagerJson : '__PUBLIC__/static/vendor/kindeditor/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=submit-form]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=submit-form]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>

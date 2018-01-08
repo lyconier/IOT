@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>欢迎使用 DC 学生作业管理系统</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/font-awesome.css" rel="stylesheet" />
+    
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/adminia.css" rel="stylesheet" /> 
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/adminia-responsive.css" rel="stylesheet" /> 
+    
+    <link href="__PUBLIC__/static/vendor/matrix-admin/css/pages/dashboard.css" rel="stylesheet" /> 
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+	
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			
+			
+			<a class="brand" href="./">DC 学生作业管理系统</a>
+			
+			<div class="nav-collapse">
+			
+				<ul class="nav pull-right">
+					<li>
+						<a href="#"><span class="badge badge-warning">7</span></a>
+					</li>
+					
+					<li class="divider-vertical"></li>
+					
+					<li class="dropdown">
+						
+						<a data-toggle="dropdown" class="dropdown-toggle " href="#">
+							  {$stuname} <b class="caret"></b>							
+						</a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="./account.html"><i class="icon-user"></i> 账户设置  </a>
+							</li>
+							
+							<li>
+								<a href="./account.html"><i class="icon-lock"></i> 修改密码</a>
+							</li>
+							
+							<li class="divider"></li>
+							
+							<li>
+								<a href="./logout"><i class="icon-off"></i>退出</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				
+			</div> <!-- /nav-collapse -->
+			
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+
+
+
+
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="span3">
+				
+				<div class="account-container">
+				
+					<div class="account-avatar">
+						<img src="__PUBLIC__/static/vendor/matrix-admin/img/headshot.png" alt="" class="thumbnail" />
+					</div> <!-- /account-avatar -->
+				
+					<div class="account-details">
+					
+						<span class="account-name">{$stuname}</span>
+						
+						<span class="account-role">学生</span>
+						
+						<span class="account-actions">
+							<a href="javascript:;">个人信息</a> |
+							
+							<a href="javascript:;">设置</a>
+						</span>
+					
+					</div> <!-- /account-details -->
+				
+				</div> <!-- /account-container -->
+				
+				<hr />
+				
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">
+					
+					<li class="{$index}">
+						<a href="./">
+							<i class="icon-home"></i>
+							已完成作业 		
+						</a>
+					</li>
+					
+					<li class="{$newtasks}">
+						<a href="./newtasks.html">
+							<i class="icon-pushpin"></i>
+							未完成作业	
+							<span class="label label-warning pull-right">{$num}</span>
+						</a>
+					</li>
+					
+					
+					
+					<li class="{$account}">
+						<a href="./account.html">
+							<i class="icon-user"></i>
+							账户设置							
+						</a>
+					</li>
+					
+					
+				</ul>	
+				
+				<hr />
+				
+				<div class="sidebar-extra">
+					<p>
+					您可以使用本系统查看老师布置的作业，完成它们并提交到数据库中，并实时的查看老师给你的评分。
+					</p>
+				</div> <!-- .sidebar-extra -->
+				
+				<br />
+		
+			</div> <!-- /span3 -->
+			
+			
+			<div class="span9">
+				{__CONTENT__}
+			</div>
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+					
+	
+<div id="footer">
+	
+	<div class="container">				
+		<hr />
+		<p>&copy; 2012 Go Ideate.</p>
+	</div> <!-- /container -->
+	
+</div> <!-- /footer -->
+
+
+
+
+  </body>
+</html>

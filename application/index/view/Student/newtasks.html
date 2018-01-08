@@ -1,0 +1,46 @@
+<link href="__PUBLIC__/static/vendor/matrix-admin/css/pages/faq.css" rel="stylesheet" /> 
+	<h1 class="page-title">
+					<i class="icon-pushpin"></i>
+					作业列表					
+				</h1>
+				
+				<div class="widget">
+														
+					<div class="widget-content">
+						
+						<h3>Search...</h3>
+									
+						
+						<ol class="faq-list">
+						{volist name="tasklist" id="task"}
+							<li>
+									<h4>{$task.task_title}</h4>
+									<p>{$task.task_content}</p>	
+									<p>布置时间：{$task.submit_date}</p>
+									<p>截至日期：{$task.finish_date}</p>
+									{if condition="$task.finish_date>date('Y-m-d',time())"}
+									<p><a href="./{$task.task_id}.html">交作业</a></p>
+									{else/}<p style="color:red;">已过期</p>
+									{/if}
+							 </li>
+						{/volist}
+						</ol>
+										
+					</div> <!-- /widget-content -->
+					
+				</div> <!-- /widget -->
+<script src="__PUBLIC__/static/vendor/matrix-admin/js/jquery-1.7.2.min.js"></script>
+<script src="__PUBLIC__/static/vendor/matrix-admin/js/bootstrap.js"></script>
+<script src="__PUBLIC__/static/vendor/matrix-admin/js/faq.js"></script>
+
+<script>
+
+$(function () {
+	
+	$('.faq-list').goFaq ();
+	
+});
+
+</script>
+
+
